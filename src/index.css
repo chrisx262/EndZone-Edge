@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* EndZone Edge — black theme base (per artifact) */
+html,
+body,
+#root {
+  min-height: 100%;
+  background-color: #000000;
+  color: #f8fafc;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
