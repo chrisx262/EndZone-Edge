@@ -10,7 +10,7 @@
       renders it. `npm run build` green, `npm run dev` serves on :5173.
       Follow-up (minor): diff nfl_prediction_app.tsx for anything worth
       salvaging — deferred, base variant is the most complete already.
-- [~] T2. Data layer: finish scripts/fetch_data.py column mapping
+- [x] T2. Data layer: finish scripts/fetch_data.py column mapping
       (verify nflreadpy load_team_stats columns on first real run),
       generate public/data/*.json for 2024+2025+2026 schedule, wire the
       app to consume them. NEEDS OWNER: run the fetch once locally.
@@ -22,9 +22,14 @@
       TO/g, KC 22.6 ppg — all correct). Notes: points for/allowed derived
       from schedule (not in team_stats); yards-allowed via opponent join;
       punt_net_avg = null (not in load_team_stats — revisit if needed).
-      REMAINING: wire NFLPredictionApp to load public/data/*.json instead
-      of its embedded real2024NFLData (needs a shape adapter — app uses
-      offense.points_per_game etc.; JSON uses pts_pg etc.).
+      APP WIRED 2026-07-06: new src/data.ts loads public/data/*.json and
+      adapts to the app's expected shape (per-game->season totals for
+      turnovers/sacks, fg_pct->0-1, records computed from schedule,
+      red_zone_efficiency = neutral 0.6 placeholder since not in free
+      data). Removed the embedded real2024NFLData blob; useEffect now
+      calls loadSeasonData(2024). Build green; dev serves data; dist/data
+      bundled for deploy; adapter verified (KC 15-2). Default season 2024
+      (T4 will add 2026 upcoming + rolling stats).
 - [ ] T3. Honest optimizer: refit UI = fit on 2024, display accuracy of
       frozen weights on 2025 only (method per scripts/honest_backtest.py;
       it prints the reference numbers). Add the Vegas-favorite 63%
