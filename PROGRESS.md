@@ -10,10 +10,21 @@
       renders it. `npm run build` green, `npm run dev` serves on :5173.
       Follow-up (minor): diff nfl_prediction_app.tsx for anything worth
       salvaging — deferred, base variant is the most complete already.
-- [ ] T2. Data layer: finish scripts/fetch_data.py column mapping
+- [~] T2. Data layer: finish scripts/fetch_data.py column mapping
       (verify nflreadpy load_team_stats columns on first real run),
       generate public/data/*.json for 2024+2025+2026 schedule, wire the
       app to consume them. NEEDS OWNER: run the fetch once locally.
+      DATA HALF DONE 2026-07-06: first fetch run; nflreadpy columns
+      verified; mapping rewritten with REAL columns. Generated
+      public/data/{teams,schedule}_{2024,2025,2026}.json (2024/2025 = 32
+      teams+272 games each; 2026 = schedule only, no stats yet, degrades
+      gracefully). Numbers spot-checked vs reality (DET 33.2 ppg, BUF 0.4
+      TO/g, KC 22.6 ppg — all correct). Notes: points for/allowed derived
+      from schedule (not in team_stats); yards-allowed via opponent join;
+      punt_net_avg = null (not in load_team_stats — revisit if needed).
+      REMAINING: wire NFLPredictionApp to load public/data/*.json instead
+      of its embedded real2024NFLData (needs a shape adapter — app uses
+      offense.points_per_game etc.; JSON uses pts_pg etc.).
 - [ ] T3. Honest optimizer: refit UI = fit on 2024, display accuracy of
       frozen weights on 2025 only (method per scripts/honest_backtest.py;
       it prints the reference numbers). Add the Vegas-favorite 63%

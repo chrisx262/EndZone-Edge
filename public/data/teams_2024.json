@@ -1,0 +1,706 @@
+[
+ {
+  "team": "GB",
+  "offense": {
+   "pts_pg": 27.06,
+   "yds_pg": 375.22,
+   "rush_yds_pg": 144.61,
+   "pass_yds_pg": 230.61,
+   "turnovers_pg": 1.17
+  },
+  "defense": {
+   "pts_allowed_pg": 19.88,
+   "yds_allowed_pg": 330.44,
+   "takeaways_pg": 1.72,
+   "sacks_pg": 2.61
+  },
+  "special": {
+   "fg_pct": 82.5,
+   "punt_net_avg": null,
+   "kick_ret_avg": 27.46,
+   "punt_ret_avg": 8.76
+  }
+ },
+ {
+  "team": "WAS",
+  "offense": {
+   "pts_pg": 28.53,
+   "yds_pg": 387.95,
+   "rush_yds_pg": 149.1,
+   "pass_yds_pg": 238.85,
+   "turnovers_pg": 0.85
+  },
+  "defense": {
+   "pts_allowed_pg": 23.0,
+   "yds_allowed_pg": 356.35,
+   "takeaways_pg": 1.15,
+   "sacks_pg": 2.4
+  },
+  "special": {
+   "fg_pct": 82.0,
+   "punt_net_avg": null,
+   "kick_ret_avg": 28.84,
+   "punt_ret_avg": 10.65
+  }
+ },
+ {
+  "team": "BAL",
+  "offense": {
+   "pts_pg": 30.47,
+   "yds_pg": 435.89,
+   "rush_yds_pg": 192.84,
+   "pass_yds_pg": 243.05,
+   "turnovers_pg": 0.74
+  },
+  "defense": {
+   "pts_allowed_pg": 21.24,
+   "yds_allowed_pg": 336.95,
+   "takeaways_pg": 0.89,
+   "sacks_pg": 3.05
+  },
+  "special": {
+   "fg_pct": 75.0,
+   "punt_net_avg": null,
+   "kick_ret_avg": 27.0,
+   "punt_ret_avg": 9.71
+  }
+ },
+ {
+  "team": "ARI",
+  "offense": {
+   "pts_pg": 23.53,
+   "yds_pg": 371.18,
+   "rush_yds_pg": 144.18,
+   "pass_yds_pg": 227.0,
+   "turnovers_pg": 1.18
+  },
+  "defense": {
+   "pts_allowed_pg": 22.29,
+   "yds_allowed_pg": 357.59,
+   "takeaways_pg": 1.0,
+   "sacks_pg": 2.41
+  },
+  "special": {
+   "fg_pct": 89.47,
+   "punt_net_avg": null,
+   "kick_ret_avg": 28.36,
+   "punt_ret_avg": 9.62
+  }
+ },
+ {
+  "team": "CIN",
+  "offense": {
+   "pts_pg": 27.76,
+   "yds_pg": 381.88,
+   "rush_yds_pg": 92.59,
+   "pass_yds_pg": 289.29,
+   "turnovers_pg": 1.12
+  },
+  "defense": {
+   "pts_allowed_pg": 25.53,
+   "yds_allowed_pg": 361.06,
+   "takeaways_pg": 1.47,
+   "sacks_pg": 2.12
+  },
+  "special": {
+   "fg_pct": 75.76,
+   "punt_net_avg": null,
+   "kick_ret_avg": 29.05,
+   "punt_ret_avg": 7.29
+  }
+ },
+ {
+  "team": "LV",
+  "offense": {
+   "pts_pg": 18.18,
+   "yds_pg": 322.0,
+   "rush_yds_pg": 79.82,
+   "pass_yds_pg": 242.18,
+   "turnovers_pg": 1.71
+  },
+  "defense": {
+   "pts_allowed_pg": 25.53,
+   "yds_allowed_pg": 351.53,
+   "takeaways_pg": 0.76,
+   "sacks_pg": 2.18
+  },
+  "special": {
+   "fg_pct": 85.0,
+   "punt_net_avg": null,
+   "kick_ret_avg": 29.57,
+   "punt_ret_avg": 9.78
+  }
+ },
+ {
+  "team": "DAL",
+  "offense": {
+   "pts_pg": 20.59,
+   "yds_pg": 341.0,
+   "rush_yds_pg": 100.29,
+   "pass_yds_pg": 240.71,
+   "turnovers_pg": 1.53
+  },
+  "defense": {
+   "pts_allowed_pg": 27.53,
+   "yds_allowed_pg": 375.06,
+   "takeaways_pg": 1.29,
+   "sacks_pg": 3.0
+  },
+  "special": {
+   "fg_pct": 85.11,
+   "punt_net_avg": null,
+   "kick_ret_avg": 32.09,
+   "punt_ret_avg": 9.84
+  }
+ },
+ {
+  "team": "NYG",
+  "offense": {
+   "pts_pg": 16.06,
+   "yds_pg": 312.0,
+   "rush_yds_pg": 104.88,
+   "pass_yds_pg": 207.12,
+   "turnovers_pg": 1.29
+  },
+  "defense": {
+   "pts_allowed_pg": 24.41,
+   "yds_allowed_pg": 363.82,
+   "takeaways_pg": 0.88,
+   "sacks_pg": 2.65
+  },
+  "special": {
+   "fg_pct": 82.14,
+   "punt_net_avg": null,
+   "kick_ret_avg": 28.31,
+   "punt_ret_avg": 7.6
+  }
+ },
+ {
+  "team": "LAC",
+  "offense": {
+   "pts_pg": 23.65,
+   "yds_pg": 337.5,
+   "rush_yds_pg": 107.33,
+   "pass_yds_pg": 230.17,
+   "turnovers_pg": 0.67
+  },
+  "defense": {
+   "pts_allowed_pg": 17.71,
+   "yds_allowed_pg": 344.94,
+   "takeaways_pg": 1.33,
+   "sacks_pg": 2.67
+  },
+  "special": {
+   "fg_pct": 93.18,
+   "punt_net_avg": null,
+   "kick_ret_avg": 27.38,
+   "punt_ret_avg": 11.95
+  }
+ },
+ {
+  "team": "IND",
+  "offense": {
+   "pts_pg": 22.18,
+   "yds_pg": 348.82,
+   "rush_yds_pg": 137.12,
+   "pass_yds_pg": 211.71,
+   "turnovers_pg": 1.71
+  },
+  "defense": {
+   "pts_allowed_pg": 25.12,
+   "yds_allowed_pg": 375.47,
+   "takeaways_pg": 1.47,
+   "sacks_pg": 2.12
+  },
+  "special": {
+   "fg_pct": 83.78,
+   "punt_net_avg": null,
+   "kick_ret_avg": 29.27,
+   "punt_ret_avg": 9.85
+  }
+ },
+ {
+  "team": "NYJ",
+  "offense": {
+   "pts_pg": 19.88,
+   "yds_pg": 328.06,
+   "rush_yds_pg": 91.82,
+   "pass_yds_pg": 236.24,
+   "turnovers_pg": 1.06
+  },
+  "defense": {
+   "pts_allowed_pg": 23.76,
+   "yds_allowed_pg": 332.18,
+   "takeaways_pg": 1.0,
+   "sacks_pg": 2.47
+  },
+  "special": {
+   "fg_pct": 71.43,
+   "punt_net_avg": null,
+   "kick_ret_avg": 30.28,
+   "punt_ret_avg": 8.06
+  }
+ },
+ {
+  "team": "SEA",
+  "offense": {
+   "pts_pg": 22.06,
+   "yds_pg": 353.29,
+   "rush_yds_pg": 95.71,
+   "pass_yds_pg": 257.59,
+   "turnovers_pg": 1.12
+  },
+  "defense": {
+   "pts_allowed_pg": 21.65,
+   "yds_allowed_pg": 351.94,
+   "takeaways_pg": 1.06,
+   "sacks_pg": 2.59
+  },
+  "special": {
+   "fg_pct": 86.67,
+   "punt_net_avg": null,
+   "kick_ret_avg": 28.03,
+   "punt_ret_avg": 7.44
+  }
+ },
+ {
+  "team": "MIN",
+  "offense": {
+   "pts_pg": 25.41,
+   "yds_pg": 365.83,
+   "rush_yds_pg": 108.94,
+   "pass_yds_pg": 256.89,
+   "turnovers_pg": 1.22
+  },
+  "defense": {
+   "pts_allowed_pg": 19.53,
+   "yds_allowed_pg": 352.56,
+   "takeaways_pg": 1.83,
+   "sacks_pg": 2.78
+  },
+  "special": {
+   "fg_pct": 83.72,
+   "punt_net_avg": null,
+   "kick_ret_avg": 24.94,
+   "punt_ret_avg": 6.56
+  }
+ },
+ {
+  "team": "KC",
+  "offense": {
+   "pts_pg": 22.65,
+   "yds_pg": 337.45,
+   "rush_yds_pg": 101.2,
+   "pass_yds_pg": 236.25,
+   "turnovers_pg": 0.9
+  },
+  "defense": {
+   "pts_allowed_pg": 19.18,
+   "yds_allowed_pg": 341.75,
+   "takeaways_pg": 1.05,
+   "sacks_pg": 2.55
+  },
+  "special": {
+   "fg_pct": 87.8,
+   "punt_net_avg": null,
+   "kick_ret_avg": 27.68,
+   "punt_ret_avg": 10.71
+  }
+ },
+ {
+  "team": "MIA",
+  "offense": {
+   "pts_pg": 20.29,
+   "yds_pg": 343.0,
+   "rush_yds_pg": 105.59,
+   "pass_yds_pg": 237.41,
+   "turnovers_pg": 1.12
+  },
+  "defense": {
+   "pts_allowed_pg": 21.41,
+   "yds_allowed_pg": 328.94,
+   "takeaways_pg": 0.94,
+   "sacks_pg": 2.06
+  },
+  "special": {
+   "fg_pct": 90.24,
+   "punt_net_avg": null,
+   "kick_ret_avg": 29.04,
+   "punt_ret_avg": 9.57
+  }
+ },
+ {
+  "team": "LA",
+  "offense": {
+   "pts_pg": 21.59,
+   "yds_pg": 347.11,
+   "rush_yds_pg": 103.47,
+   "pass_yds_pg": 243.63,
+   "turnovers_pg": 0.84
+  },
+  "defense": {
+   "pts_allowed_pg": 22.71,
+   "yds_allowed_pg": 372.37,
+   "takeaways_pg": 1.16,
+   "sacks_pg": 2.84
+  },
+  "special": {
+   "fg_pct": 86.84,
+   "punt_net_avg": null,
+   "kick_ret_avg": 26.88,
+   "punt_ret_avg": 9.05
+  }
+ },
+ {
+  "team": "CLE",
+  "offense": {
+   "pts_pg": 15.18,
+   "yds_pg": 322.76,
+   "rush_yds_pg": 94.59,
+   "pass_yds_pg": 228.18,
+   "turnovers_pg": 1.88
+  },
+  "defense": {
+   "pts_allowed_pg": 25.59,
+   "yds_allowed_pg": 357.82,
+   "takeaways_pg": 0.71,
+   "sacks_pg": 2.41
+  },
+  "special": {
+   "fg_pct": 66.67,
+   "punt_net_avg": null,
+   "kick_ret_avg": 24.83,
+   "punt_ret_avg": 10.0
+  }
+ },
+ {
+  "team": "HOU",
+  "offense": {
+   "pts_pg": 21.88,
+   "yds_pg": 352.89,
+   "rush_yds_pg": 117.16,
+   "pass_yds_pg": 235.74,
+   "turnovers_pg": 1.11
+  },
+  "defense": {
+   "pts_allowed_pg": 21.88,
+   "yds_allowed_pg": 326.84,
+   "takeaways_pg": 1.68,
+   "sacks_pg": 2.95
+  },
+  "special": {
+   "fg_pct": 83.67,
+   "punt_net_avg": null,
+   "kick_ret_avg": 30.26,
+   "punt_ret_avg": 8.14
+  }
+ },
+ {
+  "team": "CAR",
+  "offense": {
+   "pts_pg": 20.06,
+   "yds_pg": 311.12,
+   "rush_yds_pg": 110.47,
+   "pass_yds_pg": 200.65,
+   "turnovers_pg": 1.29
+  },
+  "defense": {
+   "pts_allowed_pg": 31.41,
+   "yds_allowed_pg": 417.65,
+   "takeaways_pg": 1.0,
+   "sacks_pg": 1.88
+  },
+  "special": {
+   "fg_pct": 84.62,
+   "punt_net_avg": null,
+   "kick_ret_avg": 25.24,
+   "punt_ret_avg": 7.38
+  }
+ },
+ {
+  "team": "DET",
+  "offense": {
+   "pts_pg": 33.18,
+   "yds_pg": 430.17,
+   "rush_yds_pg": 149.39,
+   "pass_yds_pg": 280.78,
+   "turnovers_pg": 1.11
+  },
+  "defense": {
+   "pts_allowed_pg": 20.12,
+   "yds_allowed_pg": 364.28,
+   "takeaways_pg": 1.33,
+   "sacks_pg": 2.06
+  },
+  "special": {
+   "fg_pct": 90.0,
+   "punt_net_avg": null,
+   "kick_ret_avg": 29.25,
+   "punt_ret_avg": 12.95
+  }
+ },
+ {
+  "team": "SF",
+  "offense": {
+   "pts_pg": 22.88,
+   "yds_pg": 387.47,
+   "rush_yds_pg": 127.24,
+   "pass_yds_pg": 260.24,
+   "turnovers_pg": 1.41
+  },
+  "defense": {
+   "pts_allowed_pg": 25.65,
+   "yds_allowed_pg": 329.06,
+   "takeaways_pg": 1.0,
+   "sacks_pg": 2.12
+  },
+  "special": {
+   "fg_pct": 76.74,
+   "punt_net_avg": null,
+   "kick_ret_avg": 28.52,
+   "punt_ret_avg": 9.19
+  }
+ },
+ {
+  "team": "DEN",
+  "offense": {
+   "pts_pg": 25.0,
+   "yds_pg": 330.78,
+   "rush_yds_pg": 110.39,
+   "pass_yds_pg": 220.39,
+   "turnovers_pg": 1.06
+  },
+  "defense": {
+   "pts_allowed_pg": 18.29,
+   "yds_allowed_pg": 346.28,
+   "takeaways_pg": 1.33,
+   "sacks_pg": 3.61
+  },
+  "special": {
+   "fg_pct": 88.57,
+   "punt_net_avg": null,
+   "kick_ret_avg": 27.14,
+   "punt_ret_avg": 15.11
+  }
+ },
+ {
+  "team": "NO",
+  "offense": {
+   "pts_pg": 19.88,
+   "yds_pg": 334.35,
+   "rush_yds_pg": 114.94,
+   "pass_yds_pg": 219.41,
+   "turnovers_pg": 1.0
+  },
+  "defense": {
+   "pts_allowed_pg": 23.41,
+   "yds_allowed_pg": 394.06,
+   "takeaways_pg": 1.0,
+   "sacks_pg": 2.29
+  },
+  "special": {
+   "fg_pct": 87.1,
+   "punt_net_avg": null,
+   "kick_ret_avg": 27.03,
+   "punt_ret_avg": 12.54
+  }
+ },
+ {
+  "team": "PIT",
+  "offense": {
+   "pts_pg": 22.35,
+   "yds_pg": 337.33,
+   "rush_yds_pg": 121.94,
+   "pass_yds_pg": 215.39,
+   "turnovers_pg": 0.83
+  },
+  "defense": {
+   "pts_allowed_pg": 20.41,
+   "yds_allowed_pg": 350.17,
+   "takeaways_pg": 1.83,
+   "sacks_pg": 2.28
+  },
+  "special": {
+   "fg_pct": 93.18,
+   "punt_net_avg": null,
+   "kick_ret_avg": 23.12,
+   "punt_ret_avg": 10.45
+  }
+ },
+ {
+  "team": "NE",
+  "offense": {
+   "pts_pg": 17.0,
+   "yds_pg": 312.47,
+   "rush_yds_pg": 115.82,
+   "pass_yds_pg": 196.65,
+   "turnovers_pg": 1.35
+  },
+  "defense": {
+   "pts_allowed_pg": 24.53,
+   "yds_allowed_pg": 351.88,
+   "takeaways_pg": 0.71,
+   "sacks_pg": 1.65
+  },
+  "special": {
+   "fg_pct": 78.79,
+   "punt_net_avg": null,
+   "kick_ret_avg": 25.46,
+   "punt_ret_avg": 14.23
+  }
+ },
+ {
+  "team": "PHI",
+  "offense": {
+   "pts_pg": 27.24,
+   "yds_pg": 386.14,
+   "rush_yds_pg": 184.1,
+   "pass_yds_pg": 202.05,
+   "turnovers_pg": 0.62
+  },
+  "defense": {
+   "pts_allowed_pg": 17.82,
+   "yds_allowed_pg": 308.29,
+   "takeaways_pg": 1.86,
+   "sacks_pg": 2.71
+  },
+  "special": {
+   "fg_pct": 80.85,
+   "punt_net_avg": null,
+   "kick_ret_avg": 26.69,
+   "punt_ret_avg": 8.38
+  }
+ },
+ {
+  "team": "JAX",
+  "offense": {
+   "pts_pg": 18.82,
+   "yds_pg": 320.35,
+   "rush_yds_pg": 101.71,
+   "pass_yds_pg": 218.65,
+   "turnovers_pg": 1.35
+  },
+  "defense": {
+   "pts_allowed_pg": 25.59,
+   "yds_allowed_pg": 403.47,
+   "takeaways_pg": 0.53,
+   "sacks_pg": 2.0
+  },
+  "special": {
+   "fg_pct": 93.1,
+   "punt_net_avg": null,
+   "kick_ret_avg": 25.72,
+   "punt_ret_avg": 11.78
+  }
+ },
+ {
+  "team": "TB",
+  "offense": {
+   "pts_pg": 29.53,
+   "yds_pg": 407.06,
+   "rush_yds_pg": 146.5,
+   "pass_yds_pg": 260.56,
+   "turnovers_pg": 1.33
+  },
+  "defense": {
+   "pts_allowed_pg": 22.65,
+   "yds_allowed_pg": 359.83,
+   "takeaways_pg": 1.0,
+   "sacks_pg": 2.61
+  },
+  "special": {
+   "fg_pct": 94.12,
+   "punt_net_avg": null,
+   "kick_ret_avg": 26.32,
+   "punt_ret_avg": 7.57
+  }
+ },
+ {
+  "team": "CHI",
+  "offense": {
+   "pts_pg": 18.24,
+   "yds_pg": 310.94,
+   "rush_yds_pg": 102.0,
+   "pass_yds_pg": 208.94,
+   "turnovers_pg": 0.82
+  },
+  "defense": {
+   "pts_allowed_pg": 21.76,
+   "yds_allowed_pg": 369.18,
+   "takeaways_pg": 1.41,
+   "sacks_pg": 2.35
+  },
+  "special": {
+   "fg_pct": 84.0,
+   "punt_net_avg": null,
+   "kick_ret_avg": 28.44,
+   "punt_ret_avg": 12.67
+  }
+ },
+ {
+  "team": "BUF",
+  "offense": {
+   "pts_pg": 30.88,
+   "yds_pg": 365.4,
+   "rush_yds_pg": 136.7,
+   "pass_yds_pg": 228.7,
+   "turnovers_pg": 0.4
+  },
+  "defense": {
+   "pts_allowed_pg": 21.65,
+   "yds_allowed_pg": 355.55,
+   "takeaways_pg": 1.8,
+   "sacks_pg": 2.15
+  },
+  "special": {
+   "fg_pct": 85.71,
+   "punt_net_avg": null,
+   "kick_ret_avg": 26.18,
+   "punt_ret_avg": 11.63
+  }
+ },
+ {
+  "team": "TEN",
+  "offense": {
+   "pts_pg": 18.29,
+   "yds_pg": 322.12,
+   "rush_yds_pg": 109.12,
+   "pass_yds_pg": 213.0,
+   "turnovers_pg": 1.88
+  },
+  "defense": {
+   "pts_allowed_pg": 27.06,
+   "yds_allowed_pg": 323.12,
+   "takeaways_pg": 1.0,
+   "sacks_pg": 1.88
+  },
+  "special": {
+   "fg_pct": 92.59,
+   "punt_net_avg": null,
+   "kick_ret_avg": 27.02,
+   "punt_ret_avg": 7.44
+  }
+ },
+ {
+  "team": "ATL",
+  "offense": {
+   "pts_pg": 22.88,
+   "yds_pg": 382.47,
+   "rush_yds_pg": 130.53,
+   "pass_yds_pg": 251.94,
+   "turnovers_pg": 1.29
+  },
+  "defense": {
+   "pts_allowed_pg": 24.88,
+   "yds_allowed_pg": 356.18,
+   "takeaways_pg": 1.06,
+   "sacks_pg": 1.82
+  },
+  "special": {
+   "fg_pct": 70.73,
+   "punt_net_avg": null,
+   "kick_ret_avg": 26.37,
+   "punt_ret_avg": 9.52
+  }
+ }
+]
