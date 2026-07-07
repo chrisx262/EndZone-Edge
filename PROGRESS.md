@@ -30,7 +30,7 @@
       calls loadSeasonData(2024). Build green; dev serves data; dist/data
       bundled for deploy; adapter verified (KC 15-2). Default season 2024
       (T4 will add 2026 upcoming + rolling stats).
-- [ ] T3. Honest optimizer: refit UI = fit on 2024, display accuracy of
+- [x] T3. Honest optimizer: refit UI = fit on 2024, display accuracy of
       frozen weights on 2025 only (method per scripts/honest_backtest.py;
       it prints the reference numbers). Add the Vegas-favorite 63%
       baseline to the UI for context — honesty is the brand.
@@ -38,11 +38,16 @@
       confirmed (FIT 2024 72.6% in-sample / TEST 2025 59.6% honest / TRAP
       69.2% / home 51.4% / Vegas favorite 63.0%). Fixed a macOS SSL cert
       failure by using certifi's CA bundle (no env vars needed now).
-      REMAINING (the actual T3): rework the app's "Find Optimal Weights"
-      to fit on 2024 and display ONLY the frozen-weights 2025 accuracy,
-      labeled "verified on the 2025 season (untouched during fitting)",
-      with the 63% Vegas baseline shown for context. Needs 2025 teams +
-      results in the app (loader already supports loadSeasonData(2025)).
+      DONE 2026-07-06: app now loads BOTH 2024 (fit) + 2025 (test).
+      Extracted pure scoreTeam()/accuracyOn() helpers. findOptimalWeights
+      fits on 2024, picks best by 2024 ONLY, headlines the frozen-weights
+      2025 accuracy labeled "verified on the 2025 season (untouched during
+      fitting)"; in-sample 2024 shown small + labeled "not real accuracy";
+      63% Vegas baseline shown; results table shows both fit+honest cols
+      with a note about the gap. runBacktest now evaluates the user's
+      current sliders on 2025 (out-of-sample) + shows Vegas baseline.
+      Verified via node sim: best 40/30/30, 2024 fit 74.3% -> 2025 honest
+      68.4% (beats Vegas 63%); 5.9pt gap proves the method. Build green.
 - [ ] T4. 2026 mode: predictions for upcoming 2026 games from rolling
       2025→2026 stats; auto-degrades gracefully preseason (no stats yet
       -> use 2025 season-end stats, labeled).
