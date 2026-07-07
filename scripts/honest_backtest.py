@@ -24,8 +24,19 @@ Run:  python scripts/honest_backtest.py
 
 import csv
 import io
+import ssl
 import statistics
 import urllib.request
+
+# macOS Homebrew/python.org builds often lack a CA bundle, so raw urllib
+# fails with CERTIFICATE_VERIFY_FAILED. Use certifi's bundle when available
+# (it's a dependency of nflreadpy, already in the venv); otherwise fall back
+# to the default context.
+try:
+    import certifi
+    _SSL_CTX = ssl.create_default_context(cafile=certifi.where())
+except Exception:
+    _SSL_CTX = None
 
 URL = "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
 FIT_SEASON, TEST_SEASON = 2024, 2025
@@ -33,7 +44,7 @@ MIN_WEEK = 5          # need rolling stats to stabilize first
 
 
 def load(season):
-    raw = urllib.request.urlopen(URL, timeout=60).read().decode()
+    raw = urllib.request.urlopen(URL, timeout=60, context=_SSL_CTX).read().decode()
     rows = [r for r in csv.DictReader(io.StringIO(raw))
             if int(r["season"]) == season and r["game_type"] == "REG"
             and r.get("home_score")]

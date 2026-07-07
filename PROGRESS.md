@@ -34,6 +34,15 @@
       frozen weights on 2025 only (method per scripts/honest_backtest.py;
       it prints the reference numbers). Add the Vegas-favorite 63%
       baseline to the UI for context — honesty is the brand.
+      FOUNDATION READY 2026-07-06: honest_backtest.py runs clean; numbers
+      confirmed (FIT 2024 72.6% in-sample / TEST 2025 59.6% honest / TRAP
+      69.2% / home 51.4% / Vegas favorite 63.0%). Fixed a macOS SSL cert
+      failure by using certifi's CA bundle (no env vars needed now).
+      REMAINING (the actual T3): rework the app's "Find Optimal Weights"
+      to fit on 2024 and display ONLY the frozen-weights 2025 accuracy,
+      labeled "verified on the 2025 season (untouched during fitting)",
+      with the 63% Vegas baseline shown for context. Needs 2025 teams +
+      results in the app (loader already supports loadSeasonData(2025)).
 - [ ] T4. 2026 mode: predictions for upcoming 2026 games from rolling
       2025→2026 stats; auto-degrades gracefully preseason (no stats yet
       -> use 2025 season-end stats, labeled).
