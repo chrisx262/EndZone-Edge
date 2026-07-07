@@ -48,9 +48,16 @@
       current sliders on 2025 (out-of-sample) + shows Vegas baseline.
       Verified via node sim: best 40/30/30, 2024 fit 74.3% -> 2025 honest
       68.4% (beats Vegas 63%); 5.9pt gap proves the method. Build green.
-- [ ] T4. 2026 mode: predictions for upcoming 2026 games from rolling
+- [x] T4. 2026 mode: predictions for upcoming 2026 games from rolling
       2025→2026 stats; auto-degrades gracefully preseason (no stats yet
       -> use 2025 season-end stats, labeled).
+      DONE 2026-07-06: app loads 2024/2025/2026. New predictData drives
+      the Predict + Data tabs: when 2026 has no stats yet (now), it uses
+      2025 season-end stats with a visible yellow banner ("No 2026 games
+      played yet — predictions use 2025 season-end stats"), and flips to
+      2026 stats automatically once they exist. Optimizer keeps fit=2024/
+      test=2025. Verified: 2026 = 272 upcoming games, all teams resolvable
+      in 2025 stats, Wk1 NE@SEA. Build green.
 - [ ] T5. Deploy static (GitHub Pages or Netlify). NEEDS OWNER: login.
 - [ ] T6. Build-in-public: README with screenshot, launch checklist.
       NEEDS OWNER: X + Bluesky handles.
