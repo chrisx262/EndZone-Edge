@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Secrets / env
+.env
+.env.*
+
 # Python (data scripts)
 .venv
 __pycache__/
