@@ -63,8 +63,30 @@
       NEEDS OWNER: X + Bluesky handles.
       IN PROGRESS 2026-07-11: repo made PUBLIC; secret scan clean;
       .gitignore now ignores .env/.env.* (commit 0813463); GitHub repo
-      description set (SEO copy w/ honest-backtest hook). Still TODO:
-      README + screenshot + launch checklist; blocked on social handles.
+      description corrected to truthful methodology copy (a prior
+      description falsely claimed "68% beats Vegas" — the honest number
+      is 59.6% and is BELOW the 63.0% Vegas baseline; see harness).
+      Content pipeline scaffolded (content/queue|posted|assets).
+      Screenshot script added (scripts/shoot.mjs). README rewrite drafted
+      but HELD FOR OWNER: framing the honest 59.6% (< Vegas 63%) as the
+      public headline reverses Chris's "beats Vegas" ask — his call.
+
+      LAUNCH CHECKLIST (T6):
+      OWNER BLOCKERS (top):
+      [ ] Hosting login (T5) — Netlify or GitHub Pages
+      [ ] Create X + Bluesky handles; send them to drop into README
+      READY / IN PROGRESS:
+      [x] Repo public + description truthful
+      [x] .env ignored
+      [x] Content pipeline dirs
+      [~] README rewrite (drafted, awaiting owner framing decision)
+      [~] Screenshot script (needs `npx playwright install chromium` +
+          a build to run against)
+      TODO before launch:
+      [ ] Approve README framing; commit README
+      [ ] Generate screenshots into content/assets/, embed in README
+      [ ] Deploy (T5); put live URL in README
+      [ ] First devlog post from content/queue/ to X + Bluesky
 - [ ] T7 (post-launch). ClosingLine bridge: "Enter my sliders in the
       leaderboard" — registers the user's config as an agent and submits
       weekly picks via ClosingLine's /picks API (see that repo's
@@ -72,6 +94,18 @@
 - [ ] T8 (post-traffic). Ads — keep the reading experience clean;
       sponsorship slots > programmatic banners (see ClosingLine's
       sponsors.json pattern).
+
+## v2 ROADMAP (NOT V1 SCOPE — do not build during V1; invariants unchanged)
+
+- **Paid "Player Win Impact" tier.** Per-player WPA/EPA computed from
+  nflverse play-by-play (free data — NOT PFF), showing each player's %
+  impact on wins/losses across offense / defense / special teams. This
+  is the post-season-start membership feature and the intended answer to
+  the old "position-group keys to victory" idea — grounded in real
+  play-by-play win-probability swings rather than subjective grades.
+  Honest-accuracy discipline still applies: any predictive claim gets
+  validated out-of-sample. Gate behind membership; keep V1 free.
+  (Full grand-path spec: _artifacts/nfl_app_prompt.md.)
 
 ## DONE before kickoff (2026-07-06, by Fable 5)
 

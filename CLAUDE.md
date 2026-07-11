@@ -16,7 +16,12 @@ with an honest weight optimizer. Ship before the 2026 season
 5. Test — `python scripts/honest_backtest.py` is the reference for any
    optimizer/accuracy work; app numbers must follow its method.
 6. Update PROGRESS.md (done / decisions / NEEDS OWNER); commit; push.
-7. Loop.
+7. Devlog: after pushing, write a 1–3 sentence plain-English devlog
+   draft of what shipped this session into content/queue/ (filename
+   `YYYY-MM-DD-slug.md`). First person, specific, no hype — draw it
+   straight from this session's commits. It's a draft for Chris to
+   post to X/Bluesky, not auto-published. Full plan: MARKETING_PLAYBOOK.md.
+8. Loop.
 
 ## Invariants — violating these is failure
 
