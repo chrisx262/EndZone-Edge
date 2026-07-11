@@ -61,6 +61,10 @@
 - [ ] T5. Deploy static (GitHub Pages or Netlify). NEEDS OWNER: login.
 - [ ] T6. Build-in-public: README with screenshot, launch checklist.
       NEEDS OWNER: X + Bluesky handles.
+      IN PROGRESS 2026-07-11: repo made PUBLIC; secret scan clean;
+      .gitignore now ignores .env/.env.* (commit 0813463); GitHub repo
+      description set (SEO copy w/ honest-backtest hook). Still TODO:
+      README + screenshot + launch checklist; blocked on social handles.
 - [ ] T7 (post-launch). ClosingLine bridge: "Enter my sliders in the
       leaderboard" — registers the user's config as an agent and submits
       weekly picks via ClosingLine's /picks API (see that repo's
