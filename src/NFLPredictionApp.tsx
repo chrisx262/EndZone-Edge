@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Target, TrendingUp, BarChart3, Settings, History, Play, Trophy, Calendar, ChevronRight, Zap, Database, CheckCircle } from 'lucide-react';
 import { loadSeasonData } from './data';
+import { rollingAccuracy, wOffFromWeights, fitHfa } from './rolling';
 
 // Honest-accuracy discipline (see scripts/honest_backtest.py + CLAUDE.md):
 // fit weights on FIT_SEASON, and the ONLY accuracy ever shown to users is
@@ -33,18 +34,12 @@ function scoreTeam(stats: any, w: any): number {
   return Math.max(0, offense + defense + special);
 }
 
-// Accuracy of a weight set on a season's completed games.
-function accuracyOn(data: any, w: any) {
-  let correct = 0, total = 0;
-  for (const g of data.completed_games) {
-    const h = data.teams[g.home_team], a = data.teams[g.away_team];
-    if (!h || !a) continue;
-    total++;
-    const pred = scoreTeam(h, w) > scoreTeam(a, w) ? g.home_team : g.away_team;
-    if (pred === g.winner) correct++;
-  }
-  return { pct: total ? (correct / total) * 100 : 0, correct, total };
-}
+// NOTE: the old accuracyOn() scored completed games with SEASON-END team
+// stats — a data leak that inflated accuracy (68.4% vs the honest ~60%).
+// Backtest/optimizer accuracy now comes from ./rolling (prior-weeks-only),
+// which mirrors scripts/honest_backtest.py. scoreTeam above is still used
+// for FUTURE-game predictions (Predict tab), where season-to-date stats are
+// legitimate — see PROGRESS.md T3.
 
 const NFLPredictionApp = () => {
   const [nflData, setNflData] = useState<any>(null);       // FIT_SEASON (2024)
@@ -152,11 +147,16 @@ const NFLPredictionApp = () => {
 
     let bestFit = -1;
     let bestWeights = null;
+    let bestHfa = 0;
     const results = [];
 
+    // Rolling (prior-weeks-only) evaluation — no season-end leak. Each combo
+    // is fit on 2024 (hfa chosen in-sample there) and the SAME frozen config
+    // is scored on the untouched 2025 season.
     for (const w of testCombinations) {
-      const fit = accuracyOn(nflData, w);      // 2024 in-sample
-      const honest = accuracyOn(testData, w);  // 2025 out-of-sample
+      const wOff = wOffFromWeights(w);
+      const fit = fitHfa(nflData.completed_games, wOff);              // 2024 in-sample
+      const honest = rollingAccuracy(testData.completed_games, wOff, fit.hfa); // 2025 frozen
       results.push({
         weights: w,
         fit: fit.pct.toFixed(1),
@@ -165,12 +165,13 @@ const NFLPredictionApp = () => {
       if (fit.pct > bestFit) {   // pick by FIT season only
         bestFit = fit.pct;
         bestWeights = w;
+        bestHfa = fit.hfa;
       }
       await new Promise(resolve => setTimeout(resolve, 60));
     }
 
     // Frozen best (chosen on 2024) applied to the untouched 2025 season.
-    const honestBest = accuracyOn(testData, bestWeights);
+    const honestBest = rollingAccuracy(testData.completed_games, wOffFromWeights(bestWeights), bestHfa);
     results.sort((a, b) => parseFloat(b.fit) - parseFloat(a.fit));
 
     setOptimalWeights({
@@ -209,23 +210,20 @@ const NFLPredictionApp = () => {
   // Backtest the user's CURRENT sliders on the untouched TEST_SEASON (2025)
   // — out-of-sample, the only honest way to show "how your model did".
   const runBacktest = () => {
-    if (!testData) return;
-    let correct = 0;
-    const results = testData.completed_games.map(game => {
-      const h = testData.teams[game.home_team];
-      const a = testData.teams[game.away_team];
-      const predicted = (h && a && scoreTeam(h, weights) > scoreTeam(a, weights))
-        ? game.home_team : game.away_team;
-      const isCorrect = predicted === game.winner;
-      if (isCorrect) correct++;
-      return { ...game, predicted, isCorrect };
-    });
+    if (!testData || !nflData) return;
+    // Rolling (prior-weeks-only) — no season-end leak. Home-field advantage
+    // is fit on 2024 so it isn't tuned on the 2025 season we're scoring.
+    const wOff = wOffFromWeights(weights);
+    const { hfa } = fitHfa(nflData.completed_games, wOff);
+    const { pct, correct, total, rows } = rollingAccuracy(testData.completed_games, wOff, hfa);
 
     setBacktestResults({
-      accuracy: ((correct / testData.completed_games.length) * 100).toFixed(1),
+      accuracy: pct.toFixed(1),
       season: TEST_SEASON,
       vegas: VEGAS_BASELINE.toFixed(1),
-      results
+      correct,
+      total,
+      results: rows,
     });
   };
 
@@ -583,6 +581,10 @@ const NFLPredictionApp = () => {
                   </div>
                   <div className="text-green-200 text-lg">
                     your sliders on the {backtestResults.season} season (out-of-sample)
+                  </div>
+                  <div className="text-gray-400 text-sm mt-1">
+                    {backtestResults.correct} of {backtestResults.total} correct — each pick uses only
+                    prior weeks' results (Weeks 1–4 are model warm-up, no pick)
                   </div>
                   <div className="text-gray-400 text-sm mt-1">
                     for context — always picking the Vegas favorite hits {backtestResults.vegas}%

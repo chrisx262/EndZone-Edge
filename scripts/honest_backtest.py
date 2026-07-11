@@ -19,6 +19,15 @@ run anywhere with zero setup. The real app uses richer nflreadpy team
 stats and three sliders — but the fit/test split is identical, and the
 in-sample-vs-honest GAP this prints is the lesson.
 
+SPECIAL TEAMS: this model sweeps Offense/Defense only. games.csv carries
+no special-teams signal, so a rolling ST term cannot be computed here —
+and the app has the same gap (its schedule JSON only has scores). The app
+therefore also runs an O/D-only honest backtest (src/rolling.ts) and its
+ST slider does not yet affect the honest number. Making ST honest in BOTH
+places requires weekly cumulative special-teams stats from
+scripts/fetch_data.py; until then, adding an inert ST weight here would be
+cosmetic. Tracked in PROGRESS.md T3 as the next data-layer step.
+
 Run:  python scripts/honest_backtest.py
 """
 

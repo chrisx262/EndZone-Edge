@@ -48,6 +48,32 @@
       current sliders on 2025 (out-of-sample) + shows Vegas baseline.
       Verified via node sim: best 40/30/30, 2024 fit 74.3% -> 2025 honest
       68.4% (beats Vegas 63%); 5.9pt gap proves the method. Build green.
+
+      *** CORRECTION 2026-07-11 — THE 68.4% ABOVE WAS A DATA LEAK. ***
+      The "node sim" (and the app's accuracyOn) scored every completed game
+      with SEASON-END team stats, so mid-season predictions saw future
+      results. That inflated the honest number to 68.4% and produced the
+      false "beats Vegas" claim. The reference harness uses rolling,
+      prior-weeks-only stats and reports 59.6% — BELOW the 63.0% Vegas
+      baseline. The model does NOT beat Vegas yet.
+      FIX 2026-07-11: added src/rolling.ts (mirrors honest_backtest.py:
+      week-by-week points-based O/D ratings, z-scored, MIN_WEEK=5, hfa fit
+      on 2024). findOptimalWeights + runBacktest now evaluate with rolling
+      (leaky accuracyOn removed). hfa is frozen from the fit season, never
+      tuned on 2025. Predict tab keeps season-to-date stats for FUTURE
+      games (legitimate). Parity check: scripts/verify_rolling.mjs (npm run
+      verify) reproduces harness 72.6% fit / 59.6% honest; app coarse grid
+      = 50/20/30 -> 60.6% honest (within noise). Build green.
+      ST LIMITATION: schedule JSON has only scores, so Special Teams (and
+      richer per-unit stats) have no rolling signal — the ST slider does
+      not affect the honest backtest, and the harness stays O/D-only. See
+      T3-FOLLOWUP below.
+- [ ] T3-FOLLOWUP (data layer, unblocks honest ST). Make fetch_data.py emit
+      weekly CUMULATIVE team stats per team (season-to-date through each
+      week), then have src/rolling.ts + honest_backtest.py score the full
+      Off/Def/ST model on rolling richer stats instead of points-only.
+      NEEDS OWNER: re-run fetch_data.py to regenerate data with weekly
+      snapshots. Until done, ST is inert in all honest accuracy.
 - [x] T4. 2026 mode: predictions for upcoming 2026 games from rolling
       2025→2026 stats; auto-degrades gracefully preseason (no stats yet
       -> use 2025 season-end stats, labeled).
